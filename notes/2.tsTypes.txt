@@ -1,0 +1,5 @@
+Common Types in Typescript:
+
+number, string, boolean
+null, undefined, void, object, array,
+any, never, unknown

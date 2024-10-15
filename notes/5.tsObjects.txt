@@ -1,0 +1,42 @@
+In JavaScript, the fundamental way that we group and pass around data is through objects. 
+In TypeScript, we represent those through object types.
+
+As we’ve seen, they can be anonymous:
+
+function greet(person: { name: string; age: number }) {
+    return "Hello " + person.name;
+}
+
+
+or they can be named by using either an interface:
+
+interface Person {
+  name: string;
+  age: number;
+}
+ 
+function greet(person: Person) {
+  return "Hello " + person.name;
+}
+
+
+or a type alias:
+
+type Person = {
+  name: string;
+  age: number;
+};
+ 
+function greet(person: Person) {
+  return "Hello " + person.name;
+}
+
+Optional Properties
+Object types can also specify that some or all of their properties are optional. To do this, add a ? after the property name:
+
+function printName(obj: { first: string; last?: string }) {
+    // ...
+}
+// Both OK
+printName({ first: "Bob" });
+printName({ first: "Alice", last: "Alisson" });

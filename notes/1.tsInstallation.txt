@@ -1,0 +1,12 @@
+INSTALLING TYPESCRIPT:
+
+via NPM: npm install typescript --save-dev
+
+via YARN: yarn add typescript --dev
+
+via PNPM: pnpm add typescript -D
+
+
+Compiling a Typescript code:
+
+tsc {fileName.ts}

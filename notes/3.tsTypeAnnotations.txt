@@ -1,0 +1,13 @@
+When you declare a variable using const, var, or let, you can optionally add a type annotation to explicitly specify the type of the variable:
+
+let myName: string = "Alice";
+
+myName = 1; //error
+myName = true; //error
+
+Typing "myName." will give all the string methods as hint...
+
+myName.toUpperCase() //error
+
+
+In most cases, though, this isn’t needed. Wherever possible, TypeScript tries to automatically infer the types in your code.

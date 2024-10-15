@@ -1,0 +1,95 @@
+Functions are the primary means of passing data around in JavaScript. TypeScript allows you to specify the types of both the input and output values of functions.
+
+Parameter Type Annotations
+    when you declare a function, you can add type annotations after each parameter to declare what types of parameters the function accepts. Parameter type annotations go after the parameter name:
+
+    function greet(name: string) {
+        console.log("Hello, " + name.toUpperCase() + "!!");
+    }
+
+    function sum(x: number, y: number){
+        x.toUpperCase() //error
+        console.log(x+y);
+    }
+
+
+
+    //DEFAULT VALUES TO ARGUMENTS
+    let loginUser = (name: string, email: string, isAdmin: boolean = false)  => {}
+
+    loginUser("Ramesh", "ramesh@gmail.com")
+
+
+
+Return Type Annotations
+    You can also add return type annotations. Return type annotations appear after the parameter list:
+
+    function getFavoriteNumber(): number {
+        return 26;
+    }
+
+
+    let output;
+    function getOutput(){
+        return "this is output";
+    }
+    output = getOutput()
+
+
+
+Functions Which Return PROMISES
+    If you want to annotate the return type of a function which returns a promise, you should use the Promise type:
+
+    async function getFavoriteNumber(): Promise<number> {
+        return 26;
+    }
+
+
+CALLBACKS
+
+
+ function get(a: number, callback:(a:number) => number) {
+   return callback(a);
+ }
+ function multiply(num: number) {
+   if (num % 2 === 0) return num * num * num;
+   else return num * num;
+ }
+ console.log(get(9, multiply));
+
+
+ Same could also be done using type alias:
+
+ type callbackFN = (a:number) => number;
+
+ function get(a:number, callback: callbackFN){
+    return callback(a);
+ }
+ function multiply(num: number) {
+   if (num % 2 === 0) return num * num * num;
+   else return num * num;
+ }
+ console.log(get(9, multiply));
+
+
+
+GENERICS
+    the types of the input relate to the type of the output, or where the types of two inputs are related in some way:
+
+    function firstElement(arr: any[]) {
+        return arr[0];
+    } //this function has a return type of "any"
+
+
+    In TypeScript, GENERICS are used when we want to describe a correspondence between two values. We do this by declaring a type parameter in the function signature:
+
+
+    function getFirstElement<Type>(arr: Type[]): Type | undefined {
+        return arr[0]
+    }
+    const a = getFirstElement([1, 2, 3]);
+    const b = getFirstElement(["Ram", "Shyam"])
+    const c = getFirstElement([null, null])
+    const d = getFirstElement([])
+
+    console.log(a, b, c, d)

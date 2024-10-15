@@ -1,0 +1,27 @@
+TYPESCRIPT: A static type checker:
+Detecting errors in code without running it is referred to as static checking.
+Determining what’s an error and what’s not based on the kinds of values being operated on is known as static type checking.
+TypeScript checks a program for errors before execution, and does so based on the kinds of values, making it a static type checker.
+
+Example:
+const obj = { width: 10, height: 15 };
+const area = obj.width * obj.heigth;
+
+Most programming languages would throw an error when these sorts of errors occur, some would do so during compilation — before any code is running. BUT NOT JAVASCRIPT.
+
+TypeScript checks this program for errors before execution, and does so based on the kinds of values, making it a static type checker.
+Here’s the error TypeScript found:
+Property 'heigth' does not exist on type '{ width: number; height: number; }'. Did you mean 'height'?
+
+
+SYNTAX:
+TypeScript is a language that is a superset of JavaScript: JS syntax is therefore legal TS. Syntax refers to the way we write text to form a program.
+TypeScript doesn’t consider any JavaScript code to be an error because of its syntax. This means you can take any working JavaScript code and put it in a TypeScript file without worrying about exactly how it is written.
+
+TYPES:
+However, TypeScript is a typed superset, meaning that it adds rules about how different kinds of values can be used. The earlier error about obj.heigth was not a syntax error: it is an error of using some kind of value (a type) in an incorrect way.
+
+
+LEARNING JAVASCRIPT & TYPESCRIPT:
+“Should I learn JavaScript or TypeScript?“
+The answer is that you can’t learn TypeScript without learning JavaScript! TypeScript shares syntax and runtime behavior with JavaScript, so anything you learn about JavaScript is helping you learn TypeScript at the same time.

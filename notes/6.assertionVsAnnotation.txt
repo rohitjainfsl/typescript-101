@@ -1,0 +1,21 @@
+// Option 1: Type assertion (tells TypeScript to trust your judgment)
+const img1 = document.querySelector("img") as HTMLImageElement;
+
+// Option 2: Type annotation with non-null assertion
+const img2: HTMLImageElement = document.querySelector("img")!;
+
+// Option 3: Type annotation with type guard
+const imgElement = document.querySelector("img");
+if (imgElement instanceof HTMLImageElement) {
+    const img3: HTMLImageElement = imgElement;
+    // Use img3 here
+}
+
+// Option 4: Type annotation with null check
+const img4: HTMLImageElement | null = document.querySelector("img");
+if (img4) {
+    // Use img4 here, TypeScript knows it's HTMLImageElement in this block
+}
+
+// Option 5: Using optional chaining and nullish coalescing
+const img5 = document.querySelector("img")?.src ?? "default.jpg";
